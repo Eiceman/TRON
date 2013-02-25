@@ -1,5 +1,4 @@
-#Put in /etc/ dir
-# /etc/hosts.deny
+#Place /etc/hosts.deny
 ALL: ALL: spawn (finger -l @%h | \
-	/usr/ucb/mail -s %d-%h root) &
+	mail -s %d-%h root) &
 ALL: ALL
