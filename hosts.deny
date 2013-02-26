@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 #Place /etc/hosts.deny
 ALL: ALL: spawn (finger -l @%h | \
 	mail -s %d-%h root) &
+=======
+#Put in /etc/ dir
+# /etc/hosts.deny
+ALL: ALL: spawn (finger -l @%h | \
+  mail -s %d-%h root) &
+>>>>>>> 6e5a4961000255ef054d51d3cf12b4331c69ae70
 ALL: ALL

@@ -1,0 +1,142 @@
+FILE COMMANDS
+ls		directory listing
+		-all formatted listing w/ hidden files
+
+cd dir		change directory to _
+		without dir, change to home folder
+
+pwd		show current directory
+mkdir		makes a new directory (folder)
+rm dir		removes (deletes) file _
+		-r deletes dir
+		-f force 
+		-rf force del dir
+
+cp f1 f2	copy f1 to f2
+		-r dir1 dir2 copy dir1 to dir2, creates dir2
+
+mv f1 f2	rename or moves f1 to f2
+cat f1		reads file
+	/proc/cpuinfo cpu info
+	/proc/meminfo memory info
+
+cat > f1	places standard input into file
+more f1		outputs file contents
+head f1		outputs first 10 lines of file
+tail f1		outputs last 10 lines of file
+
+SEARCHING
+grep pat f1	search for pat (pattern) in files (f1)
+grep -r pat f1	Same for directory of files
+cmd | grep 	search for pat in command output
+locate f1	find all instances of file
+
+SYSTEM INFO
+date		shows date
+cal		shows month's calendar
+uptime		show current uptime
+w		displays who is online, and last time on server
+whoami		Current user login
+finger user	displays info about user
+man cmd		Show the manual for use of command
+df		disk usage
+du		dir space usage
+free		shows memory and swap usage
+which app	shows proper default program
+whereis app	shows possible locations of app
+
+app file	open file with application
+web site	open website site with web browser web
+
+COMPRESSION
+tar cf f1.tar f1 - create a tar named file.tar containing files
+tar xf file.tar - extract files from file.tar
+tar czf file.tar.gz - files creates a tar with gzip compression
+tar xzf file.tar.gz - extract a tar using gzip
+tar cjf file.tar.bz2 - create a tar with bzip2 compression
+tar xjf file.tar.bz2 - extract a tar with bzip2
+gzip file - compresses file and rename it to file.gz
+gzip -d file.gz - decompresses file.gz back to file
+
+PROCESS MANAGEMENT
+ps		displays current active processes
+	-ef	displays all processes running
+kill pid	kill process id pid
+killall proc	kill all processes named proc (be careful)
+bg		lists stopped or background jobs, resumes a job in bg
+fg		brings most recent job to foreground
+fg n 		brings job n to the foreground
+
+INSTALLATION
+install from source
+./configure	Reads the configure file, might call for processor type
+make		Call make program to call the program installition
+make install	Installs
+
+dpkg -i pkg.dep		install a package debian (Ubuntu like)
+rpm -Uvh pkg.rpm	install a package (RPM Redhat)
+apt-get install app	install a package from depositary (debian)
+
+FILE PERMISSION
+chmod		octal file, change permissions of file to octal
+	4-read
+	2-write
+	1-execute
+	ex] chmod 777 - r,w,x for all
+	    chmod 755 - r,w,x for owner, r,x for group and world
+
+NETWORKING
+ping host	ping host and output results | ends only with ctrl c
+whois domain	get whois info for domain
+dig domain	get DNS info for domain
+	-x host	reverse lookup host
+wget file	download file
+wget -c file 	continue a stopped download
+tcpdump		displays TCP traffic on current network
+netstat		displays network connections, routing tables, int stats, network processes
+	-a	all ports followed with t for TCP and u for UDP no none for both
+	-l	all listening ports
+	-p	Depending on version.  Either PID (good) or port (meh)
+	-s 	stats 
+	-c 	continuously
+route		displays routing, changes tables
+ifconfig 	displays network interface status
+iwlist -scan	lists wifi networks in area
+iwconfig essid	sets target essid (network name)
+dhclient	requests network for ip address
+
+SERVER
+ssh		secure shell - access to another un*x computer's terminal
+telnet		telephone net - old windows command prompt control
+scp		secure copy - copy files over from different hosts
+nc		net cat - shows files like cat over another computer
+	-l port	listen on port number
+   ip port	connect to "server" with -l cmd running
+cat f1 | nc -l port	send file over nc
+nc ip port > f1		recieve file from above
+nc -z ip p1-p0	port scanner
+								BTW nc dict.org 2628 = good dictionary
+
+
+BACKTRACK
+airmon-ng int start	start network monitoring interface using int interface (normally wlan0)
+airodump-ng
+airocrack-ng
+
+MAC OS X
+drutil		Control Disk Driv
+diskutil	Disk Utilies (fdisk)
+hdiutil		ISO manupluation
+mduitl		Spotlight controls
+
+
+SHORTCUTS
+Ctrl + c	halts the current command
+Ctrl + z	stops the current command, resume with fg or bg
+Ctrl + d	logs out current session
+Ctrl + w	erases one word in the current line
+Ctrl + u	erases the whole line
+Ctrl + r	type to bring up a recent command
+!!		repeats the last command
+exit		log out of current session
+
